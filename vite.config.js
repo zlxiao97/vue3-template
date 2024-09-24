@@ -13,12 +13,21 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver({
+        importStyle: 'sass'
+      })],
     })
   ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')  // 设置别名 @ 指向 src 目录
     }
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/element/index.scss" as *;`,
+      },
+    },
+  },
 })
