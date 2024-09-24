@@ -10,7 +10,12 @@ const { name } = storeToRefs(appStore)
 
 <template>
   <div class="home-page">
-    <h1>Home Page</h1>
+    <el-text
+      class="mx-1"
+      type="primary"
+    >
+      Home Page
+    </el-text>
     <p>Welcome to the {{ name }} Home Page</p>
     <router-link to="/about">
       Go to About Page
