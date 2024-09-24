@@ -1,18 +1,22 @@
+<script setup>
+import { useAppStore } from '@/stores/app';
+import { storeToRefs } from 'pinia';
+
+const appStore = useAppStore()
+
+const { name } = storeToRefs(appStore)
+
+</script>
+
 <template>
   <div class="home-page">
     <h1>Home Page</h1>
-    <p>Welcome to the Home Page</p>
+    <p>Welcome to the {{ name }} Home Page</p>
     <router-link to="/about">
       Go to About Page
     </router-link>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'HomePage'
-}
-</script>
 
 <style lang="less" scoped>
 .home-page {

@@ -1,7 +1,11 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from './App.vue'
-import router from './router'  // 引入路由
+import router from './router'
+
+const pinia = createPinia()
 
 createApp(App)
-  .use(router)  // 使用路由
+  .use(router)
+  .use(pinia)
   .mount('#app')
